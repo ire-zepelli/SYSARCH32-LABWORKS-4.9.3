@@ -22,7 +22,7 @@ def geocoding (location, key):
     json_status = replydata.status_code
     print("Geocoding API URL for " + location + ":\n" + url)
     if json_status == 200 and len(json_data["hits"]) !=0:
-        json_data = requests.get(url).json()
+        json_data = replydata.json()
         lat=(json_data["hits"][0]["point"]["lat"])
         lng=(json_data["hits"][0]["point"]["lng"])
         name = json_data["hits"][0]["name"]
@@ -106,4 +106,3 @@ while True:
         else:
             print("Error message: " + paths_data["message"])
             print("*************************************************")
-        
