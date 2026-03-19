@@ -1,3 +1,8 @@
+# TEAM KAJA
+# MEMBER 1: AVENIDO, BENEDICT 
+# MEMBER 2: PASCUA, MARCIN 
+# MEMBER 3: CIRILO, KIANA KAE 
+# MEMBER 4: QUIDATO, JOHN MARV
 import requests
 import urllib.parse
 
