@@ -104,7 +104,7 @@ while True:
 
                 for step in route["instructions"]:
                     print(step["text"])
-            
+                
             # miles = (paths_data["paths"][0]["distance"])/1000/1.61
             # km = (paths_data["paths"][0]["distance"])/1000
             # sec = int(paths_data["paths"][0]["time"]/1000%60)
@@ -118,6 +118,17 @@ while True:
             #     distance = paths_data["paths"][0]["instructions"][each]["distance"]
             #     print("{0} ( {1:.1f} km / {2:.1f} miles )".format(path, distance/1000,distance/1000/1.61))
             # print("=============================================")
+            save = input("Do you want to save this route? (y/n): ").lower()
+
+            if save == "y":
+                filename = "route.txt"
+                with open(filename, "w") as f:
+                    f.write(f"Route from {orig[3]} to {dest[3]} by {vehicle}\n\n")
+                    
+                    for step in paths_data["paths"][0]["instructions"]:
+                        f.write(step["text"] + "\n")
+
+                print(f"Route saved to {filename}")
         else:
             print("Error message: " + paths_data["message"])
             print("*************************************************")
